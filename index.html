@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Screen</title>
+    <title>Video Pantalla Completa</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
         }
         video {
             position: absolute;
@@ -16,19 +23,31 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: none; /* Oculto hasta que el usuario interactúe */
         }
     </style>
 </head>
 <body>
-    <video autoplay muted loop>
+    <div id="start-message">Haz clic para iniciar el video</div>
+    <video id="fullscreen-video" loop>
         <source src="halols.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
     </video>
     <script>
-        // Asegurarse de que el audio esté activado
-        const video = document.querySelector('video');
-        video.muted = false;
-        video.play();
+        const video = document.getElementById('fullscreen-video');
+        const startMessage = document.getElementById('start-message');
+
+        document.body.addEventListener('click', () => {
+            // Ocultar mensaje inicial y mostrar el video
+            startMessage.style.display = 'none';
+            video.style.display = 'block';
+
+            // Desactivar mute y reproducir video
+            video.muted = false;
+            video.play().catch(error => {
+                console.error('Error al reproducir el video:', error);
+            });
+        });
     </script>
 </body>
 </html>
