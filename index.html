@@ -8,7 +8,6 @@
         body {
             margin: 0;
             overflow: hidden;
-            background: black;
         }
         video {
             position: absolute;
@@ -21,21 +20,15 @@
     </style>
 </head>
 <body>
-    <video autoplay loop id="loading-video">
-        <source src="halols.mp4" type="video/mp4">
+    <video autoplay muted loop>
+        <source src="tu-video.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
     </video>
     <script>
-        const video = document.getElementById('loading-video');
-
-        // Asegurarse de activar el sonido
-        video.muted = false; // Desactiva mute
-        video.volume = 1.0; // Asegura el volumen máximo
-
-        // Intentar reproducir automáticamente
-        video.play().catch(error => {
-            console.error('Error al reproducir el video automáticamente:', error);
-        });
+        // Asegurarse de que el audio esté activado
+        const video = document.querySelector('video');
+        video.muted = false;
+        video.play();
     </script>
 </body>
 </html>
