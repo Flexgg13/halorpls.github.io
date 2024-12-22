@@ -8,13 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            cursor: pointer;
         }
         video {
             position: absolute;
@@ -23,30 +17,24 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none; /* Oculto hasta que el usuario interactúe */
         }
     </style>
 </head>
 <body>
-    <div id="start-message">Haz clic para iniciar el video</div>
-    <video id="fullscreen-video" loop>
+    <video autoplay loop id="loading-video">
         <source src="halols.mp4" type="video/mp4">
         Tu navegador no soporta videos HTML5.
     </video>
     <script>
-        const video = document.getElementById('fullscreen-video');
-        const startMessage = document.getElementById('start-message');
+        const video = document.getElementById('loading-video');
 
-        document.body.addEventListener('click', () => {
-            // Ocultar mensaje inicial y mostrar el video
-            startMessage.style.display = 'none';
-            video.style.display = 'block';
+        // Asegurarse de activar el sonido
+        video.muted = false; // Desactiva mute
+        video.volume = 1.0; // Asegura el volumen máximo
 
-            // Desactivar mute y reproducir video
-            video.muted = false;
-            video.play().catch(error => {
-                console.error('Error al reproducir el video:', error);
-            });
+        // Intentar reproducir automáticamente
+        video.play().catch(error => {
+            console.error('Error al reproducir el video automáticamente:', error);
         });
     </script>
 </body>
