@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop id="loading-video">
+        <source src="halols.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+    <script>
+        const video = document.getElementById('loading-video');
+
+        // Asegurarse de activar el sonido
+        video.muted = false; // Desactiva mute
+        video.volume = 1.0; // Asegura el volumen máximo
+
+        // Intentar reproducir automáticamente
+        video.play().catch(error => {
+            console.error('Error al reproducir el video automáticamente:', error);
+        });
+    </script>
+</body>
+</html>
