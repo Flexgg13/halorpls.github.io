@@ -1,32 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Screen</title>
-    <style>
-        /* Asegura que el video ocupe toda la pantalla */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+	<meta charset="utf-8">
+	<title>Cellar Project - loading Screen</title>
+	<!-- CSS vh vw fallback -->
+	<script src="js/lib/vunit-0.2.0.min.js"></script>
+	<script>
+		new vUnit({
+			CSSMap: {
+				'.vh': {
+					property: 'max-height',
+					reference: 'vh'
+				},
+				'.vw': {
+					property: 'max-width',
+					reference: 'vw'
+				}
+			}
+		}).init();
+	</script>
+	<!-- Disable css cache -->
+	<script type="text/javascript">
+		document.write('<link rel="stylesheet" href="css/sleek.css?'+Math.random()+'">');
+	</script>
+	<!-- Enable css cache -->
+	<!-- <link rel="stylesheet" href="css/sleek.css"> -->
 </head>
 <body>
-    <video autoplay loop muted>
-        <source src="halols.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+	<div id="player"></div>
+	<div id="overlay"></div>
+	<div id="header">
+		<div id="title"></div>
+		<div id="subtitle">
+			Ahora mismo estás jugando <span id="gamemode"></span> en el mapa <span id="map"></span>
+		</div>
+	</div>
+	<div id="status-container">
+		<div id="status">Obteniendo info del servidor...</div>
+		<div id="loading">
+			<div id="loading-progress"></div>
+		</div>
+		<div id="messages"></div>
+	</div>
+	<div id="music">
+		Ahora estas escuchando<div id="music-name"></div>
+	</div>
+	<div id="enable-audio">Click aquí para reproducir música</div>
+	<div id="error-box"></div>
+	<div id="warn">
+			<h1>Oops! Something went wrong!</h1>
+			<p>Looks like the config file is broken.</p>
+			<p>Probably it is just a missing/misplaced comma, quote or bracket.</p>
+			<p>Check the browser console for further details.</p>
+		</div>
+	<script src="js/lib/jquery-2.1.1.min.js"></script>
+	<script src="js/lib/jquery.backstretch.min.js"></script>
+	<!-- Disable javascript cache -->
+	<script type="text/javascript">
+		document.write('<script src="js/config.js?'+Math.random()+'"><\/script>');
+		document.write('<script src="js/check.js?'+Math.random()+'"><\/script>');
+		document.write('<script src="js/sleek.js?'+Math.random()+'"><\/script>');
+	</script>
+	<!-- Enable javascript cache -->
+	<!-- <script src="js/config.js"></script> -->
+	<!-- <script src="js/sleek.js"></script> -->
 </body>
 </html>
