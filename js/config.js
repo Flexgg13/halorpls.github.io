@@ -72,6 +72,7 @@ var l_bgImageMapBased = false;
 // (Place the files in the backgrounds/images folder)
 // (You can also use external URL)
 var l_bgImages = [
+	"00.png",
 	"01.png",
 	"02.png",
 	"03.png",
@@ -123,11 +124,11 @@ var l_musicPlaylist = [
 
 // Random music order?
 // 'true' or 'false'
-var l_musicRandom = false;
+var l_musicRandom = true;
 
 // Music volume
 // Choose a value between 0 (quietest) and 100 (loudest)
-var l_musicVolume = 35;
+var l_musicVolume = 45;
 
 // Enable custom messages?
 // 'true' or 'false'
@@ -139,7 +140,7 @@ var l_messages = [
 	"Las desiciones de tu personaje importan",
 	"Para abrir una puerta pulsa 'E'",
 	"Bienvenido nuevamente",
-	"Si eres Combine, trata a la humanidad como basúra",
+	"Si eres Combine, trata a la humanidad como basura",
 	"¡Viva la Union Universal!",
 	"'Pick up that can'",
 	"'Hombre de pocas palabras eh'",
