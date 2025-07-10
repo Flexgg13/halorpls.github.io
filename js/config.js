@@ -81,6 +81,11 @@ var l_bgImages = [
 	"06.png",
 	"07.png",
 	"08.jpg",
+	"09.jpg",
+	"10.jpg",
+	"11.jpg",
+	"12.jpg",
+	"13.jpg",
 ];
 
 // (Image-background only)
@@ -144,10 +149,13 @@ var l_messages = [
 	"¡Viva la Union Universal!",
 	"'Pick up that can'",
 	"'Hombre de pocas palabras eh'",
-	"Quieres sacar el audio de la intro? pon 'stopsound' en la consola sin comillas.",
+	"Quieres sacar el audio de algo? pon 'stopsound' en la consola sin las comillas.",
 	"No corras ni saltes, el combine te vigila.",
 	"Lee las reglas con !motd o /reglas",
 	"Llama a un miembro del staff en el menú del TAB",
+	"Los vortigaunts son seres sabios, aliate a ellos.",
+	"Conoces a pin pong?",
+	"Usa el /me mas a menudo, te darás cuenta que es divertido.",
 ];
 
 // Random message order?
